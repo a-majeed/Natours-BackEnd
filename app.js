@@ -5,6 +5,16 @@ const app = express();
 
 app.use(express.json()); // using middleware
 
+app.use((req,res,next) => {
+    console.log('Hello from the middleware!')
+    next();
+});
+
+app.use((req,res,next) => {
+    req.requestTime = new Date().toISOString();
+    next();
+});
+
 const port = 3000;
 
 const tours = JSON.parse(
