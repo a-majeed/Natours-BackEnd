@@ -40,7 +40,4 @@ app.use('/api/v1/users', userRouter)
 
 // SERVERS
 
-app.listen(port, () => {
-    console.log(`App running on port ${port} ..`);
-});
-
+module.exports = app;
