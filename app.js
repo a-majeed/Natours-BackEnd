@@ -137,7 +137,7 @@ const updateUser = (req,res) => {
     });
 };
 
-const deletelUser = (req,res) => {
+const deleteUser = (req,res) => {
     res.status(500).json({
         status: "error",
         message: "Route not yet defined"
@@ -152,28 +152,35 @@ const deletelUser = (req,res) => {
 
 // ROUTES
 
-app
-    .route('/api/v1/tours')
+const tourRouter = express.Router();
+const userRouter = express.Router();
+
+tourRouter
+    .route('/')
     .get(getAllTours)
     .post(createTour);
 
-app
-    .route('/api/v1/tours/:id')
+tourRouter
+    .route('/:id')
     .get(getTour)
     .patch(updateTour)
     .delete(deleteTour);
 
 
-app
+userRouter
     .route('api/v1/users')
     .get(getAllUsers)
     .post(createUser);
 
-app
+userRouter
     .route('api/v1/users/:id')
     .get(getUser)
     .patch(updateUser)
     .delete(deleteUser);
+
+
+app.use('/api/v1/tours', tourRouter)
+app.use('/api/v1/users', userRouter)
 
 // SERVERS
 
