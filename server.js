@@ -13,10 +13,7 @@ mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true, 
     useFindAndModify: false
-}).then(con => {
-    console.log(con.connections);
-    console.log('DB connection successful');
-})
+}).then(con => console.log('DB connection successful'));
 
 
 
