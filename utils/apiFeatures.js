@@ -16,6 +16,8 @@ class APIFeatures {
         queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
         this.query = this.query.find(JSON.parse(queryStr));
 
+        return this;
+
     }
 
     sort(){
@@ -39,7 +41,7 @@ class APIFeatures {
             this.query = this.query.select(fields);
         }
         else{
-            thuis.query = this.query.select('-__v');
+            this.query = this.query.select('-__v');
         }
         return this;
     }
@@ -56,4 +58,4 @@ class APIFeatures {
         return this;
     }
 }
-module.export = APIFeatures;
+module.exports = APIFeatures;
