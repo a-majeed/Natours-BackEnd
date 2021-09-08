@@ -30,6 +30,7 @@
     "nodemailer": "^4.7.0",
     "pug": "^3.0.2",
     "slugify": "^1.6.0",
+    "stripe": "^8.174.0",
     "validator": "^13.6.0",
     "xss-clean": "^0.1.1"
   },
