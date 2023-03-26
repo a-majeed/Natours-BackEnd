@@ -2,7 +2,7 @@
 Natours is an website for a fictional tour company
 
 ## Live Site
-https://am-naturetours.herokuapp.com/
+https://natours-backend.onrender.com
 
 ## Key Features ✅
 * Browse various nature tours 
